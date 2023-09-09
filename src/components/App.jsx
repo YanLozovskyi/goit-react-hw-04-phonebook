@@ -14,7 +14,6 @@ export default function App() {
 
   const initialContacts = () => {
     const storedContacts = LocalStorage.load(LOCAL_STORAGE_KEY);
-    console.log(`get contact ${storedContacts}`);
     return storedContacts ?? [];
   };
 
@@ -22,7 +21,6 @@ export default function App() {
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
-    console.log('Saving contacts:', contacts);
     LocalStorage.save(LOCAL_STORAGE_KEY, contacts);
   }, [contacts]);
 
